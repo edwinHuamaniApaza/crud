@@ -1,0 +1,32 @@
+<section class="px-4 py-4">
+
+    <div class="d-flex justify-content-between">
+      <h4 class="text-success">Listado de Categoria</h4>
+      <a routerLink="/person2/create" class="btn btn-success">NUEVO</a>
+    </div>
+
+    <br>
+    
+    <table class="table table-hver" >
+      <tr class="text-success">
+        <th>ID</th>
+        <th>Nombre</th>
+        <th>Descricion</th>
+        <th>Estatus</th>
+        <th width="220px">Action</th>
+      </tr>
+      <tr *ngFor="let person of persons2">
+        <td>{{ person.id }}</td>
+        <td>{{ person.name }}</td>
+        <td>{{ person.descripcion }}</td>
+        <td>{{ person.estatus }}</td>
+        <td>
+      
+          <a href="#" [routerLink]="['/person2/', 'edit', person.id  ]" class="btn btn-success"><i class="fas fa-edit text-white "></i></a>
+          <button type="button" (click)="deletePerson2(person.id)" class="btn btn-danger ml-3"><i class="fas fa-trash text-white "></i></button>
+        </td>
+
+      
+      </tr>
+    </table>
+ </section>
